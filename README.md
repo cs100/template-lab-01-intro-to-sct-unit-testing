@@ -390,7 +390,7 @@ Now, when we run Git status, there is a section labeled "Changes to be committed
 Whenever we finish a task in our repo, we "commit" our changes. This tells Git to save the current state of the repo, made up of all the files we’ve added, so that we can come back to it later if we need to. Commit your changes using the command:
 
 ```sh
-git commit -m "Add initial files”
+git commit -m "Add initial files"
 ```
 
 Every commit needs a "commit message" that describes what changes were made in the repo. Writing clear, succinct, informative commit messages is one of the keys to using Git effectively. In this case we passed the `-m` flag to Git so we could write the commit message in the command line. If we did not pass a flag, then Git would have opened the Vim editor for us to type a longer commit message which is useful when you are commiting more major changes which require more explanation.
@@ -488,7 +488,7 @@ int main()
 Now run:
 
 ```sh
-git commit -m "Add one more rectangle and compute its area”
+git commit -m "Add one more rectangle and compute its area"
 ```
 
 Uh oh! We got an error message saying: "no changes added to the commit".
@@ -505,7 +505,7 @@ $ git status
 We can then commit the changes using:
 
 ```sh
-$ git commit -m "Add one more rectangle and compute its area”
+$ git commit -m "Add one more rectangle and compute its area"
 ```
 
 > Note: `git add` is used for several *different* tasks, such as telling git to start tracking a new file, "staging" a modified file for a subsequent commit, or signifying that a conflict has been resolved (we will visit conflicts later).  `git rm` and `git mv` can be used to remove or move files; they work the same way as the regular `rm` and `mv` commands, but they also tell git to make the corresponding changes to the repository.
