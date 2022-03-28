@@ -322,6 +322,10 @@ git config --global user.email <github-registered-email>
 
 GitHub will use the email that you configure with your Git client to track which users are making which changes. This means that you'll need to use the email address you've registered with GitHub in the above configurations (otherwise you may see commits from an anonymous user). In this course we look at commits and who made them to make sure partners in the projects and labs are contributing equally, so having misattributed commits may lead to point deductions. If you have a few which are misattribued this is not an issue but you should configure your client quickly after you notice the problem to correct the issue.
 
+### GitHub Authentication
+
+In order to access GitHub from the terminal, you will need a personal access token or an SSH key. To add a personal access token, follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). When prompted for scopes, select all of them.
+
 ### Git Init & Clone
 
 New Git repositories can be created either locally using the Git client or through GitHub directly. Make sure you are back at your home directory (`cd ~`) and run the following commands on the terminal in `hammer`:
@@ -372,7 +376,7 @@ git status
 
 The `status` command lists the current status of your Git repository, mostly showing whcih files have changes. In the output, there is a section labeled "untracked files." Notice the files in that section. This means that Git knows these files exist, but isn’t currently keeping track of changes to them. We want to keep track of all the `.cpp` `.hpp` files and `CMakeLists.txt`, but not the `area_calculator` file since that should be recompiled to run correctly on different machines. It is important to note that Git does not automatically save changes to your files either locally or on GitHub. When you have made a set of changes that you want to save, you will have to use the commands we are going to introduce below so you will use these commands very often.
 
-We don’t want Git to continue to tell us that `area_calculator` is untracked, but luckily Git has a solution for this problem. You can create a file called `.gitignore` that will contain a list of all of the files that you want Git to ignore when it tells you what is/isn’t tracked and modified. Create a file named `.gitignore` and add `area_calculator` to it. Now run `git status` again and take a look at the output. Notice that `area_calculator` is no longer listed, only the `.cpp`, `.hpp`, `CMakeLists.txt` and the new `.gitignore` files are listed as untracked. Now, we can add all of these files to our project with the following commands:
+We don’t want Git to continue to tell us that `area_calculator` is untracked, but luckily Git has a solution for this problem. You can create a file called `.gitignore` that will contain a list of all of the files that you want Git to ignore when it tells you what is/isn’t tracked and modified. To ignore a file, add the name of that file on a new line of `.gitignore`. Try adding `area_calculator` to your `.gitignore`. Now run `git status` again and take a look at the output. Notice that `area_calculator` is no longer listed, only the `.cpp`, `.hpp`, `CMakeLists.txt` and the new `.gitignore` files are listed as untracked. Now, we can add all of these files to our project with the following commands:
 
 ```sh
 git add header/rectangle.hpp
@@ -390,7 +394,7 @@ Now, when we run Git status, there is a section labeled "Changes to be committed
 Whenever we finish a task in our repo, we "commit" our changes. This tells Git to save the current state of the repo, made up of all the files we’ve added, so that we can come back to it later if we need to. Commit your changes using the command:
 
 ```sh
-git commit -m "Add initial files”
+git commit -m "Add initial files"
 ```
 
 Every commit needs a "commit message" that describes what changes were made in the repo. Writing clear, succinct, informative commit messages is one of the keys to using Git effectively. In this case we passed the `-m` flag to Git so we could write the commit message in the command line. If we did not pass a flag, then Git would have opened the Vim editor for us to type a longer commit message which is useful when you are commiting more major changes which require more explanation.
@@ -488,7 +492,7 @@ int main()
 Now run:
 
 ```sh
-git commit -m "Add one more rectangle and compute its area”
+git commit -m "Add one more rectangle and compute its area"
 ```
 
 Uh oh! We got an error message saying: "no changes added to the commit".
@@ -505,7 +509,7 @@ $ git status
 We can then commit the changes using:
 
 ```sh
-$ git commit -m "Add one more rectangle and compute its area”
+$ git commit -m "Add one more rectangle and compute its area"
 ```
 
 > Note: `git add` is used for several *different* tasks, such as telling git to start tracking a new file, "staging" a modified file for a subsequent commit, or signifying that a conflict has been resolved (we will visit conflicts later).  `git rm` and `git mv` can be used to remove or move files; they work the same way as the regular `rm` and `mv` commands, but they also tell git to make the corresponding changes to the repository.
