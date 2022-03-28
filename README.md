@@ -350,9 +350,7 @@ cd ..
 rm -rf lab-01
 ```
 
-Now, go to the upper right of this page and click the “Clone or download” dropdown. A box will appear that should say “Clone with HTTPS” (if it says “Clone with SSH”, then click the small blue text to the right that says “Use HTTPS”). The box should look like the following, being careful to make sure it says "Clone with HTTPS".
-
-![Image of clone popup set to HTTPS](https://github.com/cs100/template-lab-01-git-github/blob/master/images/https-clone.png?raw=true)
+Now, go to the upper right of this page and click the “Code” dropdown. A box will appear that should say “Clone” and the HTTPS tab should be selected with an HTTPS link displayed (if it says “Clone with SSH”, then be careful to click the tab to the left that says “HTTPS”).
 
 Copy the link in the box below, this is the GitHub repository url which you will use to clone that repository. Now, run the following command:
 
